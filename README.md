@@ -5,7 +5,7 @@ The script will make burning your Kali installation onto a USB much easier.
 
 ## Picture
 
-![Selection](https://github.com/Sorikal/KaliBurner/kaliburner.png)
+![Selection](https://github.com/Sorikal/KaliBurner/blob/master/kaliburner.png)
 
 ## Download
 
