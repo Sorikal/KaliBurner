@@ -59,7 +59,7 @@ if dep is True:
 else:
     rundependenciesscript = input("The tool will try to automatically install dependencies, continue? (Y/N): ")
     if "Y" in rundependenciesscript :
-        os.system("sudo apt-get install figlet wget git -y")
+        os.system("sudo apt-get install figlet wget fdisk git -y")
         file = open("dependencies.txt","w")
         file.write("dependencies installed")
         file.close()
@@ -99,10 +99,13 @@ image = input("What image would you like to download?\n\tLive (1)\n\tInstaller (
 
 os.system("clear")
 
-os.system("ls /dev/sd*")
+os.system("sudo fdisk -l")
 time.sleep(2)
 
 device = input("Enter the name of the device you want to burn the image onto (eg. /dev/sdb): ")
+
+time.sleep(2)
+os.system("clear")
 
 if int(image) == 1 and "64" in arch :
     isimagepresent = os.path.isfile("kali-linux-2020.1-installer-amd64.iso")
