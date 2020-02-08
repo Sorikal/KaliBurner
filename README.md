@@ -1,5 +1,14 @@
-#KaliBurner
+----
 
-This tool will help your burn Kali linux onto your USB or DVD
+## What is this script for?
+The script will make burning your Kali installation onto a USB much easier.
 
-The program is developed for Python3 and only supports Python3.
+## Download
+
+	git clone https://github.com/Sorikal/KaliBurner.git
+	cd KaliBurner.git
+	python3 burner.py
+
+## Warning 
+
+This script can brick your USB, DVD or even your computer, I'm not responsible for any damage done to your computer.
