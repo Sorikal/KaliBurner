@@ -7,7 +7,7 @@ The script will make burning your Kali installation onto a USB much easier.
 
 	git clone https://github.com/Sorikal/KaliBurner.git
 	cd KaliBurner.git
-	python3 burner.py
+	sudo python3 burner.py
 
 ## Warning 
 
