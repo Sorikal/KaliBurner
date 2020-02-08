@@ -3,6 +3,10 @@
 ## What is this script for?
 The script will make burning your Kali installation onto a USB much easier.
 
+## Picture
+
+![Selection](https://github.com/Sorikal/KaliBurner/kaliburner.png)
+
 ## Download
 
 	git clone https://github.com/Sorikal/KaliBurner.git
