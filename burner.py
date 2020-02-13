@@ -161,6 +161,7 @@ if int(image) == 2 and "64" in arch :
 
 
 if int(image) == 2 and "32" in arch :
+    imageverifiedhash = "8b2bf7b6369fb120e42080f2ba57bc8cd7522a4abda1c2715c2b809b7157ae93"
     isimagepresent = os.path.isfile("kali-linux-2020.1-installer-i386.iso")
     if isimagepresent is False :
         os.system("wget https://cdimage.kali.org/kali-2020.1/kali-linux-2020.1-installer-i386.iso")
@@ -182,6 +183,7 @@ if int(image) == 2 and "32" in arch :
     
     
 if int(image) == 1 and "64" in arch :
+    imageverifiedhash = "acf455e6f9ab0720df0abed15799223c2445882b44dfcc3f2216f9464db79152"
     isimagepresent = os.path.isfile("kali-linux-2020.1-live-amd64.iso")
     if isimagepresent is False :
         os.system("wget https://cdimage.kali.org/kali-2020.1/kali-linux-2020.1-live-amd64.iso")
@@ -201,6 +203,7 @@ if int(image) == 1 and "64" in arch :
         exit()
 
 if int(image) == 1 and "32" in arch :
+    imageverifiedhash = "401e2398d2931a4b910597e8bdf334bb85e40ef02d4878816f3050179c089fef"
     isimagepresent = os.path.isfile("kali-linux-2020.1-live-i386.iso")
     if isimagepresent is False :
         os.system("wget https://cdimage.kali.org/kali-2020.1/kali-linux-2020.1-live-i386.iso")
@@ -221,6 +224,7 @@ if int(image) == 1 and "32" in arch :
 
 
 if int(image) == 3 and "64" in arch :
+    imageverifiedhash = "c9ebf2f7d95cd9349daa3441a25fdfd5e0dab522d03a298dbfe046859c3668db"
     isimagepresent = os.path.isfile("kali-linux-2020.1-installer-netinst-amd64.iso")
     if isimagepresent is False :
         os.system("wget https://cdimage.kali.org/kali-2020.1/kali-linux-2020.1-installer-netinst-amd64.iso")
@@ -240,6 +244,7 @@ if int(image) == 3 and "64" in arch :
         exit()
 
 if int(image) == 3 and "32" in arch :
+    imageverifiedhash = "fab46fd96194bc1172ab7b3882bf4cabf383b261c3192fbf8b8c78e29ab3e08d"
     isimagepresent = os.path.isfile("kali-linux-2020.1-installer-netinst-i386.iso")
     if isimagepresent is False :
         os.system("https://cdimage.kali.org/kali-2020.1/kali-linux-2020.1-installer-netinst-i386.iso")
