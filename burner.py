@@ -4,7 +4,32 @@ import os
 import sys
 import time
 import os.path
-import distro
+import hashlib
+
+
+### The verify feature will only be available with the Kali-64bit-Installer because I'm lazy
+
+def verify():
+
+    asktoverify = input("Would you like to verify your image? (Y/n) ")
+    if "Y" in asktoverify :
+
+        hasher = hashlib.sha256()
+        with open(imagename, 'rb') as afile:
+            buf = afile.read()
+            hasher.update(buf)
+        imagehash = hasher.hexdigest()
+        print("The image's hash is: " + imagehash)
+        time.sleep(2)
+        os.system("clear")
+        if imageverifiedhash in imagehash :
+            print("Your image is correct and isn't modified, continuing script.")
+            time.sleep(1)
+            os.system("clear")
+        else:
+            print("Your image is either corrupted or modified, please delete the corrupted/modified\nand restart the script.")
+            time.sleep(2)
+            exit()
 
 
 def countdown():
@@ -45,7 +70,6 @@ os.system("clear")
 
 print("Checking for dependencies...")
 time.sleep(1)
-userdistro = distro.linux_distribution(full_distribution_name=False)
 
 os.system("clear")
 
@@ -107,14 +131,22 @@ device = input("Enter the name of the device you want to burn the image onto (eg
 time.sleep(2)
 os.system("clear")
 
-if int(image) == 1 and "64" in arch :
+if int(image) == 2 and "64" in arch :
+    imageverifiedhash = "e399fa5f4aa087218701aff513cc4cfda332e1fbd0d7c895df57c24cd5510be3"
     isimagepresent = os.path.isfile("kali-linux-2020.1-installer-amd64.iso")
     if isimagepresent is False :
         os.system("wget https://cdimage.kali.org/kali-2020.1/kali-linux-2020.1-installer-amd64.iso")
+        verify()
     else:
         print("The image is already downloaded, continuing script.")
+    time.sleep(1)
+    os.system("clear")
+        
     imagename = "kali-linux-2020.1-installer-amd64.iso"
     time.sleep(3)
+    verify()
+    time.sleep(2)
+    os.system("clear")
     sure = input("Are you sure you want to burn the image onto the device (This can cause permanent damage to the device) [Y/N]: ")
     if "Y" in sure :
         countdown()
@@ -128,7 +160,7 @@ if int(image) == 1 and "64" in arch :
         
 
 
-if int(image) == 1 and "32" in arch :
+if int(image) == 2 and "32" in arch :
     isimagepresent = os.path.isfile("kali-linux-2020.1-installer-i386.iso")
     if isimagepresent is False :
         os.system("wget https://cdimage.kali.org/kali-2020.1/kali-linux-2020.1-installer-i386.iso")
@@ -149,7 +181,7 @@ if int(image) == 1 and "32" in arch :
 
     
     
-if int(image) == 2 and "64" in arch :
+if int(image) == 1 and "64" in arch :
     isimagepresent = os.path.isfile("kali-linux-2020.1-live-amd64.iso")
     if isimagepresent is False :
         os.system("wget https://cdimage.kali.org/kali-2020.1/kali-linux-2020.1-live-amd64.iso")
@@ -168,7 +200,7 @@ if int(image) == 2 and "64" in arch :
     else:
         exit()
 
-if int(image) == 2 and "32" in arch :
+if int(image) == 1 and "32" in arch :
     isimagepresent = os.path.isfile("kali-linux-2020.1-live-i386.iso")
     if isimagepresent is False :
         os.system("wget https://cdimage.kali.org/kali-2020.1/kali-linux-2020.1-live-i386.iso")
@@ -225,6 +257,7 @@ if int(image) == 3 and "32" in arch :
 
     else:
         exit()
+
 
 
 
