@@ -136,7 +136,7 @@ if int(image) == 2 and "64" in arch :
     isimagepresent = os.path.isfile("kali-linux-2020.1-installer-amd64.iso")
     if isimagepresent is False :
         os.system("wget https://cdimage.kali.org/kali-2020.1/kali-linux-2020.1-installer-amd64.iso")
-        verify()
+        
     else:
         print("The image is already downloaded, continuing script.")
     time.sleep(1)
@@ -169,6 +169,9 @@ if int(image) == 2 and "32" in arch :
         print("The image is already downloaded, continuing script.")
     imagename = "kali-linux-2020.1-installer-i386.iso"
     time.sleep(3)
+    verify()
+    time.sleep(2)
+    os.system("clear")
     sure = input("Are you sure you want to burn the image onto the device (This can cause permanent damage to the device) [Y/N]: ")
     if "Y" in sure :
         countdown()
@@ -191,6 +194,9 @@ if int(image) == 1 and "64" in arch :
         print("The image is already downloaded, continuing script.")
     imagename = "kali-linux-2020.1-live-amd64.iso"
     time.sleep(3)
+    verify()
+    time.sleep(2)
+    os.system("clear")
     sure = input("Are you sure you want to burn the image onto the device (This can cause permanent damage to the device) [Y/N]: ")
     if "Y" in sure :
         countdown()
@@ -211,6 +217,9 @@ if int(image) == 1 and "32" in arch :
         print("The image is already downloaded, continuing script.")
     imagename = "kali-linux-2020.1-live-i386.iso"
     time.sleep(3)
+    verify()
+    time.sleep(2)
+    os.system("clear")
     sure = input("Are you sure you want to burn the image onto the device (This can cause permanent damage to the device) [Y/N]: ")
     if "Y" in sure :
         countdown()
@@ -232,6 +241,9 @@ if int(image) == 3 and "64" in arch :
         print("The image is already downloaded, continuing script.")
     imagename = "kali-linux-2020.1-installer-netinst-amd64.iso"
     time.sleep(3)
+    verify()
+    time.sleep(2)
+    os.system("clear")
     sure = input("Are you sure you want to burn the image onto the device (This can cause permanent damage to the device) [Y/N]: ")
     if "Y" in sure :
         countdown()
@@ -252,6 +264,9 @@ if int(image) == 3 and "32" in arch :
         print("The image is already downloaded, continuing script.")
     imagename = "kali-linux-2020.1-installer-netinst-i386.iso"
     time.sleep(3)
+    verify()
+    time.sleep(2)
+    os.system("clear")
     sure = input("Are you sure you want to burn the image onto the device (This can cause permanent damage to the device) [Y/N]: ")
     if "Y" in sure :
         countdown()
